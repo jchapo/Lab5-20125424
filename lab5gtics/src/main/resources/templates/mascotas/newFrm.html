@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<title>Nueva Mascotas</title>
+<div th:insert="~{fragments/header :: header}"></div>
+
+</head>
+<body>
+<div th:insert="~{fragments/navbar :: navbar}"></div>
+<hr>
+
+<main>
+        <main>
+            <div class="container px-4 py-5">
+                <h1 class="pb-2 mb-3 border-bottom">Nueva Mascota</h1>
+                <form method="post" th:action="@{'/macotas/nueva'}" class="mt-2">
+                    <div class="mb-3">
+                        <label for="nombre_mascota" class="form-label">Nombre de la mascota</label>
+                        <input name="nombre_mascota" type="text" class="form-control" id="nombre_mascota">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Género</label>
+                        <select class="form-select" name="genero" id="genero">
+                            <option value="Masculino">Masculino</option>
+                            <option value="Femenino">Femenino</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="edad" class="form-label">Edad</label>
+                        <input name="edad" type="text" class="form-control" id="edad">
+                    </div>
+                    <div class="mb-3">
+                        <label for="fecha_nacimiento" class="form-label">Fecha de nacimiento</label>
+                        <input name="fecha_nacimiento" type="text" class="form-control" id="fecha_nacimiento">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Vacunado</label>
+                        <select class="form-select" name="Vacunado" id="Vacunado" >
+                            <option value="Sí">Sí</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Desparasitado</label>
+                        <select class="form-select" name="Desparasitado" id="Desparasitado" >
+                            <option value="Sí">Sí</option>
+                            <option value="No">No</option>
+                        </select>
+                    </div>
+                    <option th:each="mascota : ${lis}" th:text="${category.getCategoryname()}"
+                            th:value="${category.getId()}"></option>
+                    <div class="mb-3">
+                        <label for="edad" class="form-label">Edad</label>
+                        <input name="edad" type="text" class="form-control" id="edad">
+                    </div>
+
+                    <a th:href="@{'/shipper/list'}" class="btn btn-danger">Cancelar</a>
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                </form>
+            </div>
+        </main>
+        <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    </body>
+</html>

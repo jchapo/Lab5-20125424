@@ -28,8 +28,9 @@ public class Mascotas {
     private String Vacunado;
     @Column(name = "Desparasitado", nullable = true)
     private String Desparasitado;
-    @Column(name = "ban", nullable = true)
-    private Integer Persona_idPersona;
+    @ManyToOne
+    @JoinColumn(name = "idPersona")
+    private Persona Persona_idPersona;
 
 
 }

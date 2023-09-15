@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <div th:insert="~{fragments/header :: header}"></div>
+</head>
+<body>
+<!--/*  Multiple fragments may be defined in one file */-->
+<div th:fragment="navbar">
+    <nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme"
+         id="layout-navbar">
+        <div class="layout-menu-toggle navbar-nav align-items-xl-center me-3 me-xl-0   d-xl-none ">
+            <a class="nav-item nav-link px-0 me-xl-4">
+                <i class="iconotam align-middle bx bx-menu bx-sm"></i>
+            </a>
+        </div>
+        <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+            <!-- Search -->
+            <div class="navbar-nav align-items-center">
+                <ul class="navbar-nav flex-row align-items-center ms-auto">
+                    <li class="nav-item">
+                        <a class="fw-bold nav-link active" th:href="@{'/viajes'}" th:if="${page == 'viajes'}">Viajes</a>
+                        <a class="nav-link" th:href="@{'/viajes'}" th:unless="${page == 'viajes'}">Viajes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fw-bold nav-link active" href="/mascotas" th:if="${page == 'mascotas'}">Mascotas</a>
+                        <a class="nav-link" href="/mascotas" th:unless="${page == 'mascotas'}">Mascotas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="fw-bold nav-link active" href="/lugares" th:if="${page == 'lugares'}">Lugares</a>
+                        <a class="nav-link" href="/lugares" th:unless="${page == 'lugares'}">Lugares</a>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</div>
+</body>
+</html>
+
+
+

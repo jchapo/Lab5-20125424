@@ -7,9 +7,10 @@
         <title>Nuevo Transportista</title>
     </head>
     <body>
+    <div th:insert="~{fragments/navbar :: navbar}"></div>
         <main>
             <div class="container px-4 py-5">
-                <h1 class="pb-2 mb-3 border-bottom">Nuevo Transportista</h1>
+                <h1 class="pb-2 mb-3 border-bottom">Lista de viajes programados</h1>
                 <form method="post" th:action="@{'/shipper/save'}" class="mt-2">
                     <div class="mb-3">
                         <label for="companyname" class="form-label">Nombre de la compañía</label>

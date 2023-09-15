@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+        <title>Lista Mascotas</title>
+        <div th:insert="~{fragments/header :: header}"></div>
+
+        </head>
+    <body>
+    <div th:insert="~{fragments/navbar :: navbar}"></div>
+    <hr>
+
+    <main>
+            <div class="container px-4 py-5">
+                <h1 class="pb-2 mb-3 border-bottom">Lista de viajes programados</h1>
+                <div class="d-flex mt-3 mb-4">
+                    <a class="btn btn-primary" th:href="@{'/mascota/nuevo'}">Nuevo Mascota</a>
+                </div>
+                <div class="alert alert-primary" role="alert" th:if="${msg != null}" th:text="${msg}">
+                    A simple primary alert—check it out!
+                </div>
+
+                <table class="table">
+                    <tr>
+                        <th>#</th>
+                        <th>Género</th>
+                        <th>Edad</th>
+                        <th>Fecha de nacimiento</th>
+                        <th>Vacunado</th>
+                        <th>Desparasitado</th>
+                        <th>Dueño</th>
+                        <th></th>
+
+                    </tr>
+                    <tr th:each="mascotas, info : ${listamascotas}">
+                        <td th:text="${info.index + 1}"></td>
+                        <td th:text="${mascotas.nombre_mascota}"></td>
+                        <td th:text="${mascotas.genero}"></td>
+                        <td th:text="${mascotas.edad}"></td>
+                        <td th:text="${mascotas.fecha_nacimiento}"></td>
+                        <td th:text="${mascotas.vacunado}"></td>
+                        <td th:text="${mascotas.desparasitado}"></td>
+                        <td th:text="${mascotas.persona_idPersona}"></td>
+                        <td><a class="btn btn-primary" th:href="@{'/mascotas/editar' + '?id=' + ${mascotas.idMascotas}}">Editar</a>
+                        </td>
+                        <td><a class="btn btn-danger" th:href="@{'/mascotas/borrar' + '?id=' + ${mascotas.idMascotas}}">Borrar</a>
+                        </td>
+                    </tr>
+                </table>
+                <hr>
+            </div>
+        </main>
+        <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+    </body>
+</html>

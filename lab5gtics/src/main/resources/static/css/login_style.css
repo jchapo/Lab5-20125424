@@ -1,0 +1,74 @@
+.center-container-login3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.custom-row {
+    min-height: 500px;
+}
+
+.custom-card {
+    background-color: rgb(255 255 255 / 33%);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+    min-height: 500px;
+}
+
+.custom-body {
+    background-image: url(/images/bg-2.jpg);
+    background-size: cover;
+    background-position: center;
+    /*font-family: 'Montserrat Alternates', sans-serif;*/
+
+}
+
+.letra1 {
+    font-family: 'Assistant', sans-serif;}
+
+.letra2 {
+    font-family: 'Nunito', sans-serif;}
+
+.image-container {
+    background-image:url(/images/bg-4.jpg);
+    background-size: cover;
+    background-position: right;
+}
+
+.blurred-container {
+    min-width: 300px;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 300px;
+    padding: 35px;
+    border: 1px solid rgba(255, 255, 255, .25);
+    border-radius: 20px;
+    background-color: rgb(255 255 255 / 0%);
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(3px);
+}
+
+.image-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.blur1 {
+    max-width: 70%;
+
+}
+
+}
+
+
+
+
