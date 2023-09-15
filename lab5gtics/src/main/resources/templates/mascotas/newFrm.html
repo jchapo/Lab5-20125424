@@ -46,8 +46,8 @@
                             <option value="No">No</option>
                         </select>
                     </div>
-                    <option th:each="mascota : ${lis}" th:text="${category.getCategoryname()}"
-                            th:value="${category.getId()}"></option>
+                    <option th:each="mascota : ${listamascotas}" th:text="${mascota.getPersona_idPersona().getNombre()}"
+                            th:value="${mascota.getPersona_idPersona().getIdPersona()}"></option>
                     <div class="mb-3">
                         <label for="edad" class="form-label">Edad</label>
                         <input name="edad" type="text" class="form-control" id="edad">
